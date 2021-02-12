@@ -22,7 +22,7 @@ const Layout = ({ isHomePage, children }) => {
     <div className="global-wrapper" data-is-root-path={isHomePage}>
       <header className="global-header">
         {isHomePage ? (
-          <h1 className="main-heading">
+          <h1 className="text-2xl">
             <Link to="/">{parse(title)}</Link>
           </h1>
         ) : (
