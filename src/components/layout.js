@@ -6,7 +6,7 @@ import Footer from './footer'
 const Layout = ({ children }) => (
   <div className="flex flex-col min-h-vh font-sans">
     <Navbar />
-    <main>{children}</main>
+    <main className="mt-20">{children}</main>
     <Footer />
   </div>
 )
