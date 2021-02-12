@@ -5,3 +5,7 @@
 .mt-auto {
   margin-top: auto;
 }
+
+.active {
+  @apply border-indigo-500 text-gray-900;
+}
