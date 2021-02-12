@@ -5,7 +5,7 @@ const Index = () => (
   <>
     <Layout>
       {/* <!-- This example requires Tailwind CSS v2.0+ --> */}
-      <div className="bg-white pt-4 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
+      <div className="bg-white z-10 pt-4 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
         <div className="relative max-w-lg mx-auto divide-y-4 divide-indigo-200 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl tracking-tight font-extrabold text-indigo-700 sm:text-4xl">
