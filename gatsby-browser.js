@@ -5,3 +5,4 @@ import "typeface-merriweather"
 import "./src/normalize.css"
 // custom CSS styles
 import "./src/style.css"
+import "./src/css/index.css"
