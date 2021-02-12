@@ -9,3 +9,7 @@
 .active {
   @apply border-indigo-500 text-gray-900;
 }
+
+.mobile-active {
+  @apply bg-indigo-50 border-indigo-500 text-indigo-700;
+}
