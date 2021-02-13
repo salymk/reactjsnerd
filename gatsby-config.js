@@ -19,9 +19,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `http://reactjs-nerd.local/graphql`,
+        url: process.env.WPGRAPHQL_URL || `http://reactjs-nerd.local/graphql`,
       },
     },
 
@@ -52,7 +50,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `ReactJS Nerd`,
-        short_name: `GatsbyJS & WP`,
+        short_name: `ReactJS Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
