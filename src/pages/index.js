@@ -2,6 +2,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import parse from 'html-react-parser'
+import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
 const Index = ({ data }) => (
@@ -23,11 +24,13 @@ const Index = ({ data }) => (
           <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
             {data.allWpPost.nodes.map(post => (
               <div key={post.slug}>
-                <div className="relative pb-2/3">
-                  <img
+                <div className="relative">
+                  <Img
                     className="absolute w-full h-full object-cover rounded-lg shadow-md mb-4"
-                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"
-                    alt=""
+                    fluid={
+                      post.featuredImage.node.localFile.childImageSharp.fluid
+                    }
+                    alt={post.featuredImage.node.altText}
                   />
                 </div>
                 <div className="relative px-4 -mt-20">
@@ -74,12 +77,24 @@ export default Index
 
 export const pageQuery = graphql`
   query {
-    allWpPost(sort: { fields: [date] }) {
+    allWpPost(sort: { fields: [date], order: DESC }) {
       nodes {
         title
         excerpt
         slug
         date(formatString: "MMMM DD, YYYY")
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
