@@ -1,40 +1,55 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import { Link } from 'gatsby'
 
 const Footer = () => (
-  <footer className="bg-white mt-auto">
-    <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+  <footer className="bg-indigo-700 mt-auto">
+    <div className="max-w-7xl mx-auto px-4 overflow-hidden sm:px-6 lg:px-8">
       <nav
         className="-mx-5 -my-2 flex flex-wrap justify-center"
         aria-label="Footer"
       >
         <div className="px-5 py-2">
-          <a href="#" className="text-md text-gray-500 hover:text-gray-900">
+          <Link to="/" className="text-lg text-indigo-50 hover:text-indigo-300">
             {' '}
             Blog{' '}
-          </a>
+          </Link>
         </div>
 
         <div className="px-5 py-2">
-          <a href="#" className="text-md text-gray-500 hover:text-gray-900">
+          <Link
+            to="/portfolio/"
+            className="text-lg text-indigo-50 hover:text-indigo-300"
+          >
             {' '}
             Portfolio{' '}
-          </a>
+          </Link>
         </div>
       </nav>
       <div className="mt-8 flex justify-center space-x-6">
-        <a href="#" className="text-gray-400 hover:text-gray-500">
+        <a
+          href="https://www.linkedin.com/in/salym-akhmedov/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-50 hover:text-indigo-300"
+        >
           <span className="sr-only">LinkedIn</span>
           <svg
             className="h-8 w-8"
             fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16H8v-6h2v6zM9 9.109c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zM17 16h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0V16h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548V16z" />
           </svg>
         </a>
 
-        <a href="#" className="text-gray-400 hover:text-gray-500">
+        <a
+          href="https://github.com/salymk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-50 hover:text-indigo-300"
+        >
           <span className="sr-only">GitHub</span>
           <svg
             className="h-8 w-8"
