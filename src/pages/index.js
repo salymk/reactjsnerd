@@ -30,12 +30,21 @@ const Index = ({ data }) => {
           <div className="relative max-w-lg mx-auto divide-y-4 divide-indigo-200 lg:max-w-7xl">
             <div>
               <h2 className="text-3xl tracking-tight font-extrabold text-indigo-700 sm:text-4xl">
-                Let's get really good at reactjs, together
+                Let's get great at reactjs, together
               </h2>
               <p className="mt-3 text-xl text-gray-500 sm:mt-4 lg:max-w-2xl">
-                I want to get really good at reactjs, so I started this blog to
-                write articles on what I learn so that the knowledge does not
-                fall from my slippry brain
+                Hey nerds, my name is{' '}
+                <a
+                  className="font-medium text-indigo-700 hover:text-indigo-900"
+                  href="https://www.linkedin.com/in/salym-akhmedov/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Salym Akhmedov
+                </a>
+                , and I want to get great at reactjs, so I started this blog to
+                share what I learn and so that the knowledge does not fall from
+                my slippery brain.
               </p>
             </div>
             <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
