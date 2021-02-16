@@ -6,9 +6,6 @@ exports.createPages = ({ graphql, actions }) => {
     {
       allWpPost(sort: { fields: [date] }) {
         nodes {
-          title
-          excerpt
-          content
           slug
         }
       }
