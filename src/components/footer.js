@@ -65,7 +65,7 @@ const Footer = () => (
           </svg>
         </a>
       </div>
-      <p className="mt-8 text-center text-base text-gray-400">
+      <p className="mt-8 text-center text-base text-indigo-50">
         &copy; 2021 ReactJS Nerd. All rights reserved.
       </p>
     </div>
