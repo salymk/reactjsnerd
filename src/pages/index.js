@@ -3,6 +3,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import parse from 'html-react-parser'
 import Img from 'gatsby-image'
+import Seo from 'gatsby-plugin-wpgraphql-seo'
+import { v4 as uuidv4 } from 'uuid'
+
 import Layout from '../components/layout'
 
 const Index = ({ data }) => {
@@ -21,6 +24,7 @@ const Index = ({ data }) => {
   return (
     <>
       <Layout>
+        <Seo post={data.wpPage} />
         {/* <!-- This example requires Tailwind CSS v2.0+ --> */}
         <div className="bg-white z-10 pt-4 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
           <div className="relative max-w-lg mx-auto divide-y-4 divide-indigo-200 lg:max-w-7xl">
@@ -36,7 +40,7 @@ const Index = ({ data }) => {
             </div>
             <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
               {data.allWpPost.nodes.map(post => (
-                <div key={post.slug}>
+                <div key={uuidv4()}>
                   <div className="relative">
                     <Img
                       className="absolute w-full h-full object-cover rounded-lg shadow-md mb-4"
@@ -50,16 +54,19 @@ const Index = ({ data }) => {
                     <div className="group relative px-4 -mt-20">
                       <div className="transition duration-500 ease-in-out bg-white p-4 rounded-lg shadow-lg hover:shadow-xl border-2 border-white group-hover:border-indigo-500">
                         <div>
-                          <div className="inline-block">
-                            {post.tags.nodes.map(tag => (
-                              <span
-                                className={`mr-2 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium ${tagColor(
-                                  tag.name
-                                )} `}
-                              >
-                                {tag.name}{' '}
-                              </span>
-                            ))}
+                          <div className="max-w-2xl">
+                            <div className="mx-auto">
+                              {post.tags.nodes.map(tag => (
+                                <span
+                                  key={uuidv4()}
+                                  className={`mr-2 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium ${tagColor(
+                                    tag.name
+                                  )} `}
+                                >
+                                  {tag.name}{' '}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                           {/* ${
                               tag.name === 'reactjs'
@@ -80,8 +87,8 @@ const Index = ({ data }) => {
               </p> */}
                             <div className="transition duration-500 ease-in-out flex space-x-1 text-sm text-gray-500 group-hover:text-indigo-500">
                               <time dateTime="2020-03-16"> {post.date} </time>
-                              <span aria-hidden="true"> &middot; </span>
-                              <span> 6 min read </span>
+                              {/* <span aria-hidden="true"> &middot; </span>
+                              <span> 2 min read </span> */}
                             </div>
                           </div>
                         </div>
@@ -124,6 +131,39 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+
+    wpPage(slug: { eq: "home" }) {
+      title
+      seo {
+        title
+        metaDesc
+        focuskw
+        metaKeywords
+        metaRobotsNoindex
+        metaRobotsNofollow
+        opengraphTitle
+        opengraphDescription
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        canonical
+        cornerstone
+        schema {
+          articleType
+          pageType
+          raw
         }
       }
     }
