@@ -23,7 +23,8 @@ module.exports = {
         head: true,
         anonymize: true,
       },
-    }`gatsby-plugin-postcss`,
+    },
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-wordpress`,
       options: {
