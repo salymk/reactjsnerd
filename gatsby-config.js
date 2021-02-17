@@ -16,12 +16,21 @@ module.exports = {
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
    */
   plugins: [
-    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `G-S15YKPFN7Y`,
+        head: true,
+        anonymize: true,
+      },
+    }`gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || `http://reactjs-nerd.local/graphql`,
+        url:
+          process.env.GATSBY_WPGRAPHQL_URL ||
+          `http://reactjs-nerd.local/graphql`,
       },
     },
 
