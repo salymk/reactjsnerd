@@ -89,7 +89,7 @@ const Layout = ({ children }) => {
 
   return (
     <SEOContext.Provider value={{ global: seo }}>
-      <div className="flex flex-col min-h-vh font-sans">
+      <div className="flex flex-col min-h-screen font-sans">
         <Navbar />
         <main className="mt-20">{children}</main>
         <Footer />
