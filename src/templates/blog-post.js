@@ -23,6 +23,9 @@ export default function BlogPost({ data }) {
     if (tagName === 'gatsbyjs') {
       return 'bg-purple-100 text-purple-800'
     }
+    if (tagName === 'react fundamentals') {
+      return 'bg-indigo-100 text-indigo-800'
+    }
   }
   return (
     <Layout>
