@@ -52,18 +52,19 @@ const Index = ({ data }) => {
             </div>
             <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
               {data.allWpPost.nodes.map(post => (
-                <div key={uuidv4()}>
-                  <div className="relative">
-                    <Img
-                      className="absolute w-full h-full object-cover rounded-lg shadow-md mb-4"
-                      fluid={
-                        post.featuredImage.node.localFile.childImageSharp.fluid
-                      }
-                      alt={post.featuredImage.node.altText}
-                    />
-                  </div>
+                <div key={uuidv4()} className="group">
                   <Link to={post.slug}>
-                    <div className="group relative px-4 -mt-20">
+                    <div className="relative">
+                      <Img
+                        className="absolute w-full h-full object-cover rounded-lg shadow-md mb-4"
+                        fluid={
+                          post.featuredImage.node.localFile.childImageSharp
+                            .fluid
+                        }
+                        alt={post.featuredImage.node.altText}
+                      />
+                    </div>
+                    <div className="relative px-4 -mt-20">
                       <div className="transition duration-500 ease-in-out bg-white p-4 rounded-lg shadow-lg hover:shadow-xl border-2 border-white group-hover:border-indigo-500">
                         <div>
                           <div className="max-w-2xl">
