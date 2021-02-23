@@ -22,6 +22,10 @@ const Index = ({ data }) => {
     if (tagName === 'react fundamentals') {
       return 'bg-indigo-100 text-indigo-800'
     }
+    if (tagName === 'react hooks') {
+      return 'bg-green-100 text-green-800'
+    }
+    return 'bg-indigo-100 text-indigo-800'
   }
 
   return (
